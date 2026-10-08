@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.DS_Store
+
+# Local website inspection copies; keep only authored notes and provenance.
+reference/*.js
+reference/*.html
+
+# Local browser screenshots of the reference artwork.
+screenshots/

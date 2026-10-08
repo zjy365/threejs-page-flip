@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f5f5ee" />
+    <meta name="description" content="An interactive Three.js experiment with realistic paper curls, double-sided pages, and dynamic shadows." />
+    <title>Three.js Page Flip — Realistic Page Turns</title>
+  </head>
+  <body>
+    <header>
+      <a class="wordmark" href="./" aria-label="Three.js Page Flip home"><span class="mark" aria-hidden="true"></span>Three.js Page Flip</a>
+      <a class="reference" href="https://paper.design/mono" target="_blank" rel="noreferrer">Inspiration ↗</a>
+    </header>
+    <main>
+      <div class="intro"><div><span class="eyebrow">EXPERIMENT 001 / PAPER & MOTION</span><h1>One more page.</h1></div><p>Grab a corner.<br />Drag or click to turn.</p></div>
+      <section id="stage" aria-label="Interactive 3D magazine">
+        <div class="axis axis-top" aria-hidden="true">PAPER MONO / TYPE SPECIMEN</div>
+        <div id="loading" role="status">Preparing the pages <span id="loaded">0 / 28</span></div>
+        <div class="axis axis-bottom" aria-hidden="true">FOR THE LOVE OF DESIGN.</div>
+      </section>
+      <footer>
+        <div class="pagination"><button id="prev" aria-label="Previous page">←</button><output id="pages" aria-live="polite">14 — 15</output><button id="next" aria-label="Next page">→</button></div>
+        <p class="hint">Drag a corner · Hold to flip · ← → Arrow keys</p>
+        <div class="actions"><button id="auto" aria-pressed="false">Autoplay <span>▷</span></button><button id="reset" aria-label="Return to the opening spread">Reset ↺</button><button id="settings" aria-expanded="false" aria-controls="tuning">Settings ⌘</button></div>
+      </footer>
+      <div id="tuning" hidden><label>Page curl <input id="curl" type="range" min="0.15" max="1.15" value="0.83" step="0.01" /></label><label>Turn speed <input id="speed" type="range" min="0.5" max="2" value="1" step="0.05" /></label><label class="wire"><input id="wireframe" type="checkbox" /> Show wireframe</label></div>
+      <p id="error" role="alert" hidden></p>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
