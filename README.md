@@ -2,11 +2,13 @@
 
 An interactive Three.js book with realistic page curls, double-sided printing, dynamic shadows, and drag-to-turn interaction. Inspired by the magazine on [Paper Mono](https://paper.design/mono).
 
+[Live demo](https://pageflip.zjy365.dev/)
+
 The demo runs independently of the original website. Its scene, controls, animation state, and paper material live in `src/`. This is an unofficial recreation, not the original site's source code or an official Paper project.
 
 ## Getting started
 
-Install Node.js 20.19+ or 22.12+, then run:
+Install Node.js 22.12+ (or a newer LTS release), then run:
 
 ```sh
 git clone https://github.com/zjy365/threejs-page-flip.git
@@ -29,6 +31,19 @@ To run the animation regression tests:
 ```sh
 npm test
 ```
+
+## Deploying to Cloudflare
+
+The live demo is hosted with Cloudflare Workers Static Assets. `wrangler.jsonc` serves the production build and binds the custom domain.
+
+To deploy your own copy, change the Worker `name` and the `routes` hostname in `wrangler.jsonc` to a domain in your Cloudflare account. Alternatively, remove `routes` and set `workers_dev` to `true` to use a Cloudflare-provided hostname. Then run:
+
+```sh
+npx wrangler login
+npm run deploy
+```
+
+This deploys the build directly; pushes to GitHub do not automatically deploy it. Custom domains use Cloudflare-managed DNS and HTTPS certificates.
 
 ## Controls
 
@@ -58,6 +73,7 @@ This is an analytical surface model, rather than a physics simulation. The same 
 | `tests/page-stack.test.js` | Forward, backward, and consecutive-turn stack regression tests |
 | `reference/NOTES.md` | Implementation observations and scope |
 | `reference/assets.json` | Source paths for the reference artwork |
+| `wrangler.jsonc` | Cloudflare static asset deployment and custom domain configuration |
 
 ## Using your own images
 

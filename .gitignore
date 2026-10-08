@@ -1,6 +1,10 @@
 node_modules/
 dist/
 .DS_Store
+.wrangler/
+.dev.vars
+.env
+.env.*
 
 # Local website inspection copies; keep only authored notes and provenance.
 reference/*.js

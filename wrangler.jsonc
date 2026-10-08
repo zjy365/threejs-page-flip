@@ -1,0 +1,12 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "threejs-page-flip",
+  "compatibility_date": "2026-10-08",
+  "workers_dev": false,
+  "assets": {
+    "directory": "./dist"
+  },
+  "routes": [
+    { "pattern": "pageflip.zjy365.dev", "custom_domain": true }
+  ]
+}
